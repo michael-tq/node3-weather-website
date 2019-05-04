@@ -1,3 +1,4 @@
+
 //fetch is a browser api, not part of javascript, we can use in all modern
 //browswers but not in node, it will be run in client side javascript
 
@@ -24,7 +25,7 @@ weatherForm.addEventListener('submit', (e) => {
   messageOne.textContent = 'Loading...'
   messageTwo.textContent = ''
 
-  fetch('http://localhost:3000/weather?address=' + location).then((response) => {
+  fetch('/weather?address=' + location).then((response) => {
     response.json().then((data) => {
       if (data.error){
         messageOne.textContent = data.error

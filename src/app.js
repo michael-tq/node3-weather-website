@@ -6,6 +6,7 @@ const geocode = require('./utils/geocode')
 //express is actually a function
 
 const app = express()
+const port = process.env.PORT || 3000
 
 //Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -95,10 +96,14 @@ app.get('*', (req, res) => {
   })
 })
 
-app.listen(3000, ()=>{
-  console.log('Server is up on port 3000.')
+app.listen(port, ()=>{
+  console.log('Server is up on port ' + port)
 })
 
 //dont understand what line 8 is doing, and
 //why is app.use and app.set used to set the path, why not just use on the them
 //what is destructuring, .hbs, partials, lines 15-18, line 21
+
+//when you use git install, the package-lock.json and package.json files will
+//be used to come up witg tge node_module folder, so dont track the node_modules
+//folder, use .gitignore folder
